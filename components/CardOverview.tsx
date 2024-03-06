@@ -3,7 +3,7 @@ import BtnBook from './BtnBook';
 
 export default function CardOverview() {
   return (
-    <div className="grid-cols-1 grid lg:grid-cols-3 md:grid-cols-2 ">
+    <div className="grid-cols-1 grid lg:grid-cols-3 md:grid-cols-2 font-poppins ">
       <div className="mx-3 mt-6 flex flex-col rounded-md bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
         <a href="#!">
           <img

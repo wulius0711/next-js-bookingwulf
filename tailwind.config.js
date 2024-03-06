@@ -9,6 +9,11 @@ module.exports = {
   ],
   prefix: '',
   theme: {
+    fontFamily: {
+      heading: ['"Cambria"', 'ui-serif'],
+      body: ['"Open Sans"', 'sans-serif'],
+    },
+
     container: {
       center: true,
       padding: '2rem',
