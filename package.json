@@ -2,24 +2,45 @@
   "name": "next-js-bookingwulf",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
+    "@fontsource-variable/open-sans": "^5.0.25",
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-slot": "^1.0.2",
+    "add": "^2.0.6",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.343.0",
+    "next": "14.1.0",
+    "popover": "^2.4.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "sass": "^1.71.1",
+    "shadcn-ui": "^0.8.0",
+    "sharp": "^0.33.2",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "eslint-config-upleveled": "^7.8.1",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-upleveled": "^1.0.7",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
