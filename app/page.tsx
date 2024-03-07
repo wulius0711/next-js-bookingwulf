@@ -1,4 +1,4 @@
-import CardOverview from '@/components/CardOverview';
+import CardOverview from '../components/CardOverview';
 
 export default function Home() {
   return (

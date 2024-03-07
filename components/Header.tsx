@@ -1,5 +1,4 @@
 'use client';
-import { cn } from '@/lib/utils';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import {
   BuildingStorefrontIcon,
@@ -13,6 +12,7 @@ import {
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import React, { Fragment, useState } from 'react';
+import { cn } from '../lib/utils';
 
 const tripItems = [
   {
