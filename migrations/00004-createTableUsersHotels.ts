@@ -3,12 +3,7 @@ import { Hotel } from './00002-createTableHotels';
 
 export type UserHotels = {
   userId: number;
-  userFirstName: string;
-  userLastName: string;
-  userEmail: string;
-  userHotelId: number;
-  userHotelName: string;
-  userHotelType: string;
+  hotelId: number;
 };
 
 export type JsonAgg = Hotel[];
@@ -16,8 +11,9 @@ export type JsonAgg = Hotel[];
 export type UserWithHotels = {
   userId: number;
   userFirstName: string;
-  userType: string;
-  userAccessory: string | null;
+  userLastName: string;
+  userMail: string;
+  userUsername: string;
   userHotels: JsonAgg;
 };
 
@@ -40,5 +36,5 @@ export async function up(sql: Sql) {
 }
 
 export async function down(sql: Sql) {
-  await sql` DROP TABLE user_foods `;
+  await sql` DROP TABLE user_hotels `;
 }

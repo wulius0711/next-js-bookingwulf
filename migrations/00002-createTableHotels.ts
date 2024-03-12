@@ -13,7 +13,7 @@ export type Hotel = {
 export const hotelSchema = z.object({
   hotelName: z.string(),
   description: z.string(),
-  address: z.string().email(),
+  address: z.string(),
   rating: z.number(),
   pricePerNight: z.number(),
 });
@@ -23,7 +23,7 @@ export async function up(sql: Sql) {
     CREATE TABLE hotels (
       id integer PRIMARY key generated always AS identity,
       hotel_name varchar(40) NOT NULL,
-      description text NOT NULL,
+      description TEXT NOT NULL,
       address varchar(40) NOT NULL,
       rating integer NOT NULL,
       price_per_night integer NOT NULL
