@@ -6,7 +6,9 @@ import ErrorMessage from '../../../app/ErrorMessage';
 import { getSafeReturnToPath } from '../../../util/validation';
 import { RegisterResponseBodyPost } from '../api/register/route';
 
-export default function RegisterForm() {
+type Props = { returnTo?: string | string[] };
+
+export default function RegisterForm(props: Props) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
@@ -18,7 +20,7 @@ export default function RegisterForm() {
 
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
+    console.log('Test');
     const response = await fetch('api/register', {
       method: 'POST',
       body: JSON.stringify({
@@ -40,7 +42,8 @@ export default function RegisterForm() {
       return;
     }
     router.push(
-      getSafeReturnToPath(props.returnTo) || `/profile/${data.user.username}`,
+      // getSafeReturnToPath(props.returnTo)
+      `/profile/${data.user.username}`,
     );
 
     router.refresh();
@@ -119,7 +122,7 @@ export default function RegisterForm() {
           </div>
           <div className="text-center">
             <button
-              type="button"
+              // type="button"
               className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             >
               Create an account

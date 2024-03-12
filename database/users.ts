@@ -3,6 +3,9 @@ import { sql } from './connect';
 
 export type User = {
   id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
   username: string;
 };
 
@@ -29,6 +32,9 @@ export const getUserByUsernameInsecure = cache(async (username: string) => {
   const [user] = await sql<User[]>`
     SELECT
       id,
+      first_name,
+      last_name,
+      email,
       username
     FROM
       users
@@ -53,13 +59,28 @@ export const getUserWithPasswordHashByUsernameInsecure = cache(
 );
 
 export const createUserInsecure = cache(
-  async (username: string, passwordHash: string) => {
-    const [user] = await sql<User[]>`
+  async (
+    firstName: string,
+    lastName: string,
+    username: string,
+    email: string,
+    passwordHash: string,
+  ) => {
+    const [user] = await sql<Pick<User, 'id' | 'username'>[]>`
       INSERT INTO
-        users (username, password_hash)
+        users (
+          first_name,
+          last_name,
+          username,
+          email,
+          password_hash
+        )
       VALUES
         (
+          ${firstName},
+          ${lastName},
           ${username.toLowerCase()},
+          ${email},
           ${passwordHash}
         )
       RETURNING

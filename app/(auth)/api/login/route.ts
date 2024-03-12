@@ -2,13 +2,18 @@ import crypto from 'node:crypto';
 import bcrypt from 'bcrypt';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 import { createSessionInsecure } from '../../../../database/sessions';
 import {
   getUserWithPasswordHashByUsernameInsecure,
   User,
 } from '../../../../database/users';
-import { userSchema } from '../../../../migrations/00000-createTableUsers';
 import { secureCookieOptions } from '../../../../util/cookies';
+
+export const userSchema = z.object({
+  username: z.string(),
+  password: z.string().min(3),
+});
 
 export type LoginResponseBodyPost =
   | {
