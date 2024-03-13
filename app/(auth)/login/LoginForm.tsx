@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { getSafeReturnToPath } from '../../../util/validation';
 import ErrorMessage from '../../ErrorMessage';
 import { LoginResponseBodyPost } from '../api/login/route';
+import LoginButton from './LoginButton';
 
 type Props = { returnTo?: string | string[] };
 
@@ -90,14 +91,7 @@ export default function LoginForm(props: Props) {
               </label>
             </div>
           </div>
-          <div className="text-center">
-            <button
-              // type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-            >
-              Login
-            </button>
-          </div>
+          <LoginButton />
           {errors.map((error) => (
             <div className="error" key={`error-${error.message}`}>
               <ErrorMessage>{error.message}</ErrorMessage>
