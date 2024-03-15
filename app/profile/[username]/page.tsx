@@ -62,7 +62,7 @@ export default async function UserProfilePage(props: Props) {
             <p className="mt-4">Active since: 2024</p>
             <p className="mb-8">Number of Hotels: 4</p>
             <a
-              href="/"
+              href="/hotels/dashboard"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#374151] border-2 border-[#374151] rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Create Hotel

@@ -16,12 +16,14 @@ function Footer() {
         <div className="flex justify-between flex-col md:flex-row  items-center md:items-start  md:gap-[5rem] text-left">
           {/* logo side */}
           <div className="flex flex-col w-1/3 md:p-0 py-4 gap-8">
-            <img
-              src="/bookingwulf-logo.png"
-              alt="footer_logo"
-              className="w-[12rem]"
-              width="50%"
-            />
+            <a href="/">
+              <img
+                src="/bookingwulf-logo.png"
+                alt="footer_logo"
+                className="w-[12rem]"
+                width="50%"
+              />
+            </a>
 
             {/* socials */}
             <div className="flex gap-7 text-[18px] text-[#646464] justify-center md:justify-start">
@@ -75,9 +77,6 @@ function Footer() {
               Sunday - Closed
             </p>
           </div>
-
-          {/* middle div */}
-          <span></span>
         </div>
       </div>
     </footer>

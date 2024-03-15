@@ -15,7 +15,7 @@ export const hotelSchema = z.object({
   description: z.string(),
   address: z.string(),
   rating: z.number(),
-  pricePerNight: z.number(),
+  pricePerNight: z.string(),
 });
 
 export async function up(sql: Sql) {
