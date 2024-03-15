@@ -7,10 +7,11 @@ export type Hotel = {
   description: string;
   address: string;
   rating: number;
-  pricePerNight: number;
+  pricePerNight: string;
 };
 
 export const hotelSchema = z.object({
+  id: z.number(),
   hotelName: z.string(),
   description: z.string(),
   address: z.string(),
@@ -26,7 +27,7 @@ export async function up(sql: Sql) {
       description TEXT NOT NULL,
       address varchar(40) NOT NULL,
       rating integer NOT NULL,
-      price_per_night integer NOT NULL
+      price_per_night varchar(20) NOT NULL
     )
   `;
 }

@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 import { getValidSession } from '../../../database/sessions';
 import { getSafeReturnToPath } from '../../../util/validation';
 import LoginForm from './LoginForm';
@@ -21,7 +21,9 @@ export default async function LoginPage({ searchParams }: Props) {
     sessionTokenCookie && (await getValidSession(sessionTokenCookie.value));
 
   // 3. If the sessionToken cookie is valid, redirect to home
-  if (session) redirect(getSafeReturnToPath(searchParams.returnTo) || '/');
+  // if (session) redirect(getSafeReturnToPath(searchParams.returnTo) || '/');
+
+  if (session) redirect('/profile');
 
   // 4. If the sessionToken cookie is invalid or doesn't exist, show the login form
   return <LoginForm returnTo={searchParams.returnTo} />;

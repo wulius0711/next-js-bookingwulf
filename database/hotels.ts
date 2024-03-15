@@ -24,12 +24,12 @@ export const createHotelInsecure = cache(
       >[]
     >`
       INSERT INTO
-        hotel (
-          hotelname,
+        hotels (
+          hotel_name,
           description,
           address,
           rating,
-          pricepernight,
+          price_per_night
         )
       VALUES
         (
@@ -40,11 +40,11 @@ export const createHotelInsecure = cache(
           ${pricePerNight}
         )
       RETURNING
-        hotelname,
+        hotel_name,
         description,
         address,
         rating,
-        pricepernight,
+        price_per_night
     `;
     return hotel;
   },
