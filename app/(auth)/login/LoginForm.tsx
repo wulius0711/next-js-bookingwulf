@@ -10,10 +10,10 @@ import LoginButton from './LoginButton';
 type Props = { returnTo?: string | string[] };
 
 export default function LoginForm(props: Props) {
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
+  // const [firstname, setFirstname] = useState('');
+  // const [lastname, setLastname] = useState('');
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
   const router = useRouter();
@@ -91,7 +91,9 @@ export default function LoginForm(props: Props) {
               </label>
             </div>
           </div>
-          <LoginButton />
+          <div className="text-center">
+            <LoginButton />
+          </div>
           {errors.map((error) => (
             <div className="error" key={`error-${error.message}`}>
               <ErrorMessage>{error.message}</ErrorMessage>

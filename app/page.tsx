@@ -1,4 +1,5 @@
 import CardOverview from '../components/CardOverview';
+import CardSingle from '../components/CardSingle';
 import Footer from '../components/Footer';
 import {
   Card,
@@ -8,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '../components/ui/card';
+import { hotels } from '../database/hotel-db';
 
 // // NEW TRY
 
@@ -66,10 +68,12 @@ export default function Home() {
           Discover the world's hidden gems on hotels, flights and much more...
         </h2>
       </section>
-      <section className="max-w-7xl mx-auto px-6 py-10 text-left font-body">
+      {/* <section className="max-w-7xl mx-auto px-6 py-10 text-left font-body">
         <CardOverview />
+      </section> */}
+      <section className=" max-w-7xl mx-auto pt-16 text-center text-[#373737]">
+        <CardSingle />
       </section>
-
       <Footer />
     </main>
   );

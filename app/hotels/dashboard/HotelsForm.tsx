@@ -79,7 +79,7 @@ export default function HotelsForm() {
                 <div className="mb-4">Hotel Name</div>
                 <input
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="hotel name"
+                  placeholder="Hotel California"
                   onChange={(event) => setHotelName(event.currentTarget.value)}
                 />
               </label>
@@ -91,7 +91,7 @@ export default function HotelsForm() {
                 <div className="mb-4">Description</div>
                 <input
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="description"
+                  placeholder="Experience Flower Power"
                   onChange={(event) =>
                     setDescription(event.currentTarget.value)
                   }
@@ -105,7 +105,7 @@ export default function HotelsForm() {
                 <div className="mb-4">Address</div>
                 <input
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="address"
+                  placeholder="1670 Ocean Avenue, Santa Monica, CA, 90401, US"
                   onChange={(event) => setAddress(event.currentTarget.value)}
                 />
               </label>
@@ -117,7 +117,7 @@ export default function HotelsForm() {
                 <div className="mb-4">Rating</div>
                 <input
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="rating"
+                  placeholder="1-5"
                   onChange={(event) => setRating(event.currentTarget.value)}
                 />
               </label>
@@ -129,6 +129,7 @@ export default function HotelsForm() {
             </div>
             <input
               className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="€ 120,-"
               onChange={(event) => setPricePerNight(event.currentTarget.value)}
             />
           </div>
