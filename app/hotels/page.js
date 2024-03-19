@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '../../components/ui/button';
 import {
   Card,
   CardContent,
@@ -13,7 +14,7 @@ import { getHotelsInsecure } from '../../database/hotels';
 
 export const metadata = {
   title: 'Hotels page',
-  description: 'All Hotels from bookingwulf',
+  description: 'Current Hotels from bookingwulf',
 };
 
 export default async function HotelsPage() {
@@ -25,15 +26,16 @@ export default async function HotelsPage() {
         <h1 className="font-bold text-5xl font-heading mb-16">
           Current Hotels
         </h1>
-        <div className="grid-cols-1 grid lg:grid-cols-3 md:grid-cols-2 font-poppins mb-16">
-          <div className="mx-3 my-6 flex flex-col rounded-md bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
-            {hotels.map((hotel) => {
-              return (
-                <Card
-                  className="flex flex-col rounded-md bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0 text-left justify-between"
-                  key={`hotels-${hotel.hotelName}`}
-                  data-test-id={`hotel-type-${hotel.hotelName}`}
-                >
+
+        {hotels.map((hotel) => {
+          return (
+            <div
+              className="grid-cols-1 grid lg:grid-cols-3 md:grid-cols-2 font-poppins mb-16"
+              key={`hotels-${hotel.hotelName}`}
+              data-test-id={`hotel-type-${hotel.hotelName}`}
+            >
+              <div className="mx-3 my-6 flex flex-col rounded-md bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+                <Card className="flex flex-col rounded-md bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0 text-left justify-between">
                   {/* <Link href={`/hotel/${hotel.hotelName}`}>
                     <div>{hotel.hotelName}</div>
                     <Image
@@ -78,13 +80,32 @@ export default async function HotelsPage() {
                       </div>
                     </CardFooter>
 
-                    <div className="text-center mb-8">{/* <BtnBook /> */}</div>
+                    <div className="text-center mb-8">
+                      <Button variant="book" className=" text-white">
+                        Book now
+                        <svg
+                          className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 14 10"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9"
+                          />
+                        </svg>
+                      </Button>
+                    </div>
                   </div>
                 </Card>
-              );
-            })}
-          </div>
-        </div>
+              </div>
+            </div>
+          );
+        })}
       </section>
     </main>
   );
