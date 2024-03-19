@@ -24,7 +24,7 @@ export default async function HotelPage(props) {
       <div>{singleHotel.description}</div>
       <Image
         src={`/images/${singleHotel.hotelName.toLowerCase()}.png`}
-        alt={singleHotel.firstName}
+        alt={singleHotel.hotelName}
         width={200}
         height={200}
       />

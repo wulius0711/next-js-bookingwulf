@@ -21,12 +21,12 @@ export default async function HotelsPage() {
             data-test-id={`hotel-type-${hotel.hotelName}`}
           >
             <Link href={`/hotel/${hotel.hotelName}`}>
-              <div>{hotel.firstName}</div>
+              <div>{hotel.hotelName}</div>
               <Image
                 src={`/images/${hotel.hotelName.toLowerCase()}.png`}
                 width={300}
                 height={200}
-                alt={hotel.firstName}
+                alt={hotel.hotelName}
               />
             </Link>
           </div>
