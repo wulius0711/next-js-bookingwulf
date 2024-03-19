@@ -7,14 +7,12 @@ import {
   CardHeader,
   CardTitle,
 } from '../components/ui/card';
-import { hotels } from '../database/hotel-db';
 import BtnBook from './BtnBook';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 
 export default function CardSingle() {
-  console.log(hotels);
   return (
     <div className="grid-cols-1 grid lg:grid-cols-3 md:grid-cols-2 font-poppins mb-16">
       {hotels.map((hotel) => (
