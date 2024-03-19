@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import {
   Card,
@@ -31,9 +30,9 @@ export default function CardSingle() {
                 alt="Hotel to book"
               />
               <CardHeader className="flex-col gap-4">
-                <CardTitle className="mb-2 text-xl font-medium leading-tight">
+                <div className="text-2xl font-medium leading-tight">
                   {hotel.hotelname}
-                </CardTitle>
+                </div>
                 <CardDescription>{hotel.address}</CardDescription>
               </CardHeader>
               <CardContent className="mb-4 text-base">

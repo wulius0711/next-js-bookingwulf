@@ -49,3 +49,48 @@ export const createHotelInsecure = cache(
     return hotel;
   },
 );
+
+export const getHotelsInsecure = cache(async () => {
+  const hotels = await sql<Hotel[]>`
+    SELECT
+      *
+    FROM
+      hotels
+    ORDER BY
+      id
+  `;
+
+  return hotels;
+});
+
+export const getHotelInsecure = cache(async (id: number) => {
+  // Postgres always returns an array
+  const [hotel] = await sql<Hotel[]>`
+    SELECT
+      *
+    FROM
+      hotels
+    WHERE
+      hotel_name = ${hotelName}
+  `;
+
+  return hotel;
+});
+
+export const updateHotelInsecure = cache(async (updatedHotel: Hotel) => {
+  const [hotel] = await sql<Hotel[]>`
+    UPDATE hotels
+    SET
+      hotel_name = ${updatedHotel.hotelName},
+      description = ${updatedHotel.description},
+      address = ${updatedHotel.address},
+      rating = ${updatedHotel.rating},
+      price_per_night = ${updatedHotel.pricePerNight}
+    WHERE
+      hotel_name = ${updatedHotel.hotelName}
+    RETURNING
+      hotels.*
+  `;
+
+  return hotel;
+});

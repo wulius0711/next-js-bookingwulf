@@ -3,6 +3,7 @@
 // import dayjs from 'dayjs';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { hotels } from '../../../database/hotel-db';
 import { RegisterResponseBodyPost } from '../../api/hotels/route';
 // import { Animal } from '../../../migrations/00000-createTableAnimals';
 import ErrorMessage from '../../ErrorMessage';
