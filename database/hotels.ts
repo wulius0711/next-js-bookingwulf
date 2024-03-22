@@ -2,6 +2,7 @@ import { cache } from 'react';
 import { sql } from './connect';
 
 export type Hotel = {
+  id: number;
   hotelName: string;
   description: string;
   address: string;
@@ -63,7 +64,7 @@ export const getHotelsInsecure = cache(async () => {
   return hotels;
 });
 
-export const getHotelInsecure = cache(async (id: number) => {
+export const getHotelInsecure = cache(async (hotelName: string) => {
   // Postgres always returns an array
   const [hotel] = await sql<Hotel[]>`
     SELECT

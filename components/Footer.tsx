@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { AiFillYoutube, AiOutlineTwitter } from 'react-icons/ai';
 import { BiLogoPinterestAlt } from 'react-icons/bi';
 import { FaFacebookF } from 'react-icons/fa';
@@ -10,7 +11,7 @@ function Footer() {
     { icon: <BiLogoPinterestAlt /> },
   ];
   return (
-    <footer className="bg-white">
+    <footer className="bg-white mt-32">
       <div className="container mx-auto  max-w-7xl py-[4rem]">
         {/* footer div all */}
         <div className="flex justify-between flex-col md:flex-row  items-center md:items-start  md:gap-[5rem] text-left">
@@ -45,16 +46,19 @@ function Footer() {
           <div className="flex flex-col gap-4 relative">
             <p className="text-[22px] font-bold footer-main">Quick Links</p>
 
-            <p className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium hover:font-bold">
+            <Link
+              href="/hotels"
+              className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium"
+            >
               Trips
-            </p>
-            <p className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium hover:font-bold">
+            </Link>
+            <p className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium">
               Specials
             </p>
-            <p className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium hover:font-bold">
+            <p className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium">
               Cars
             </p>
-            <p className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium hover:font-bold">
+            <p className="text-[16px] hover:text-[#EA5303] cursor-pointer text-[#646464] font-medium">
               Sights
             </p>
           </div>

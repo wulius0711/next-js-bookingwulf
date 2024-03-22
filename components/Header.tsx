@@ -12,7 +12,6 @@ import {
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import React, { Fragment, useState } from 'react';
-import LoginButton from '../app/(auth)/login/LoginButton';
 import LogoutButton from '../app/(auth)/logout/LogoutButton';
 import { cn } from '../lib/utils';
 
@@ -21,7 +20,7 @@ const tripItems = [
     id: 1,
     name: 'Stays',
     description: 'worlds topnotch hotels',
-    href: '#',
+    href: '/hotels',
     icon: BuildingStorefrontIcon,
   },
   {
@@ -84,13 +83,14 @@ export default function Header() {
         {/* Submenu from 'Stays' with Popover component */}
         <Popover.Group className="hidden lg:flex lg:gap-x-16 items-center">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-base leading-6 text-white">
+            <Popover.Button className="flex items-center gap-x-1 text-base leading-6 text-white hover:text-gray-200">
               Trips
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-white"
                 aria-hidden="true"
               />
             </Popover.Button>
+
             <Transition
               as={Fragment}
               enter="transition ease-out duration-200"
@@ -105,7 +105,7 @@ export default function Header() {
                   {tripItems.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-md p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center gap-x-6 rounded-md p-4 text-sm leading-6 hover:bg-gray-100"
                     >
                       <div className="flex h-11 w-11 flex-none items-center justiy-center rounded-md">
                         <item.icon
@@ -146,19 +146,28 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <a href="/" className="text-base leading-6 text-white">
+          <a
+            href="/"
+            className="text-base leading-6 text-white hover:text-gray-200"
+          >
             Specials
           </a>
-          <a href="/" className="text-base leading-6 text-white">
+          <a
+            href="/"
+            className="text-base leading-6 text-white hover:text-gray-200"
+          >
             Cars
           </a>
-          <a href="/" className="text-base leading-6 text-white">
+          <a
+            href="/"
+            className="text-base leading-6 text-white hover:text-gray-200"
+          >
             Sights
           </a>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
-              href="http://localhost:3000/register"
-              className="text-base leading-6 text-white underline hover:no-underline"
+              href="/register"
+              className="text-base leading-6 text-white underline hover:no-underline hover:text-gray-200"
             >
               Register
               {/* <span aria-hidden="true">&rarr;</span> */}
@@ -166,8 +175,8 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
-              href="http://localhost:3000/login"
-              className="text-base leading-6 text-white underline hover:no-underline"
+              href="/login"
+              className="text-base leading-6 text-white underline hover:no-underline hover:text-gray-200"
             >
               Log in
               {/* <span aria-hidden="true">&rarr;</span> */}
@@ -175,22 +184,6 @@ export default function Header() {
           </div>
           <LogoutButton />
         </Popover.Group>
-        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="http://localhost:3000/login"
-            className="text-base leading-6 text-white"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div> */}
-        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="http://localhost:3000/login"
-            className="text-base leading-6 text-white"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div> */}
       </nav>
 
       {/* mobile menu dialog */}
@@ -290,7 +283,7 @@ export default function Header() {
               <div>
                 <div className="mb-4 lg:flex lg:flex-1 lg:justify-end">
                   <a
-                    href="http://localhost:3000/register"
+                    href="/register"
                     className="text-base leading-6 text-white underline hover:no-underline"
                   >
                     Register
@@ -299,7 +292,7 @@ export default function Header() {
                 </div>
                 <div className="mb-4 lg:flex lg:flex-1 lg:justify-end">
                   <a
-                    href="http://localhost:3000/login"
+                    href="/login"
                     className="text-base leading-6 text-white underline hover:no-underline"
                   >
                     Log in

@@ -11,7 +11,6 @@ export type Hotel = {
 };
 
 export const hotelSchema = z.object({
-  id: z.number(),
   hotelName: z.string(),
   description: z.string(),
   address: z.string(),

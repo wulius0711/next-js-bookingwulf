@@ -12,7 +12,7 @@ const hotels = [
   },
   {
     id: 2,
-    hotelName: 'Ibis Wembley ',
+    hotelName: 'Ibis Wembley',
     description:
       "Ibis London Wembley hotel is in close proximity to Wembley Stadium and Wembley Arena, both just a few minutes' walk from the hotel. Each of the 210 modern guest rooms have wireless internet and satellite TV. The hotel has excellent local transport connections into central London.",
     address: 'London/England',

@@ -94,11 +94,25 @@ export default function LoginForm(props: Props) {
           <div className="text-center">
             <LoginButton />
           </div>
-          {errors.map((error) => (
-            <div className="error" key={`error-${error.message}`}>
-              <ErrorMessage>{error.message}</ErrorMessage>
-            </div>
-          ))}
+          <p className="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
+            Don't have an account?{' '}
+            <a
+              href="/register"
+              className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+            >
+              Register here
+            </a>
+          </p>
+          <div className="flex justify-center">
+            {errors.map((error) => (
+              <div
+                className="error text-center bg-red-500 rounded-md text-white p-2 w-2/3"
+                key={`error-${error.message}`}
+              >
+                <ErrorMessage>{error.message}</ErrorMessage>
+              </div>
+            ))}
+          </div>
         </form>
       </div>
     </section>

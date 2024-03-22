@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import ErrorMessage from '../../../app/ErrorMessage';
-import { getSafeReturnToPath } from '../../../util/validation';
+// import { getSafeReturnToPath } from '../../../util/validation';
 import { RegisterResponseBodyPost } from '../api/register/route';
 
 type Props = { returnTo?: string | string[] };
@@ -131,7 +131,7 @@ export default function RegisterForm(props: Props) {
           <p className="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
             Already have an account?{' '}
             <a
-              href="http://localhost:3000/login"
+              href="/login"
               className="font-medium text-primary-600 hover:underline dark:text-primary-500"
             >
               Login here

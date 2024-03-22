@@ -1,9 +1,9 @@
 'use client';
 
+import { CldUploadButton } from 'next-cloudinary';
 // import dayjs from 'dayjs';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { hotels } from '../../../database/hotel-db';
 import { RegisterResponseBodyPost } from '../../api/hotels/route';
 // import { Animal } from '../../../migrations/00000-createTableAnimals';
 import ErrorMessage from '../../ErrorMessage';
@@ -16,7 +16,7 @@ export default function HotelsForm() {
   const [hotelName, setHotelName] = useState('');
   const [description, setDescription] = useState('');
   const [address, setAddress] = useState('');
-  const [rating, setRating] = useState('');
+  const [rating, setRating] = useState(0);
   const [pricePerNight, setPricePerNight] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
 
@@ -24,8 +24,7 @@ export default function HotelsForm() {
 
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log('Test');
-    const response = await fetch('api/hotels/', {
+    const response = await fetch('/api/hotels/', {
       method: 'POST',
       body: JSON.stringify({
         hotelName: hotelName,
@@ -45,6 +44,7 @@ export default function HotelsForm() {
       setErrors(data.errors);
       return;
     }
+    router.push(`/hotels/${data.hotel.hotelName}`);
   }
   // Weiterleitung zur designten Komponente -- später
   // router.push(
@@ -60,7 +60,7 @@ export default function HotelsForm() {
     setHotelName('');
     setDescription('');
     setAddress('');
-    setRating('');
+    setRating(0);
     setPricePerNight('');
   }
 
@@ -119,7 +119,9 @@ export default function HotelsForm() {
                 <input
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="1-5"
-                  onChange={(event) => setRating(event.currentTarget.value)}
+                  onChange={(event) =>
+                    setRating(Number(event.currentTarget.value))
+                  }
                 />
               </label>
             </div>
@@ -134,6 +136,7 @@ export default function HotelsForm() {
               onChange={(event) => setPricePerNight(event.currentTarget.value)}
             />
           </div>
+          <CldUploadButton uploadPreset="<Upload Preset>" />
           <div className="text-center">
             <button
               // type="button"

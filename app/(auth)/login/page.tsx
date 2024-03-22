@@ -23,7 +23,7 @@ export default async function LoginPage({ searchParams }: Props) {
   // 3. If the sessionToken cookie is valid, redirect to home
   // if (session) redirect(getSafeReturnToPath(searchParams.returnTo) || '/');
 
-  if (session) redirect('/profile');
+  if (session) redirect('/hotels');
 
   // 4. If the sessionToken cookie is invalid or doesn't exist, show the login form
   return <LoginForm returnTo={searchParams.returnTo} />;
