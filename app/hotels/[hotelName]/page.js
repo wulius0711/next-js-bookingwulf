@@ -29,8 +29,8 @@ export default async function HotelPage(props) {
             <div className="w-fit mx-auto">
               <img
                 className="rounded-md"
-                src={`/images/${singleHotel.hotelName.toLowerCase()}.png`}
-                alt={singleHotel.hotelName}
+                src={`/images/${singleHotel.hotelName.toLowerCase()}.webp`}
+                alt={singleHotel.hotelName.toLowerCase()}
               />
             </div>
           </section>

@@ -30,7 +30,7 @@ const hotels = [
   },
   {
     id: 4,
-    hotelName: 'Hotel Ibis La Défense Centre',
+    hotelName: 'Hotel Ibis La Defense Centre',
     description:
       'In the heart of the La Défense business district, the ibis Paris La Défense Centre hotel is ideally situated between the Grande Arche and the Arc de Triomphe. The hotel boasts a restaurant, bar and 286 air-conditioned rooms with free Wi-Fi access. The nearby Esplanade de la Défense metro station (line 1), provides easy access to the Porte Maillot convention center, the Champs Elysées and even the 4 Temps shopping mall within 10 minutes.',
     address: 'Paris/France',
@@ -66,7 +66,7 @@ const hotels = [
   },
   {
     id: 8,
-    hotelName: 'Hotel Drei Könige Luzern',
+    hotelName: 'Hotel Drei Koenige Luzern',
     description:
       'Hotel Drei Könige is a comfortable and welcoming hotel located in Lucerne, close to the town hall. The hotel offers 50 rooms each with a television, radio, hair dryer, private bathroom, Wi-Fi, safe and telephone. It also has a restaurant which offers vegetarian meals, a lunchroom, and terrace.',
     address: 'Lucerne/Switzerland',
