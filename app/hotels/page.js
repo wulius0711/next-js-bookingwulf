@@ -30,13 +30,13 @@ export default async function HotelsPage() {
             return (
               <div
                 className="mx-3 my-6 flex flex-col rounded-md bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0"
-                key={`hotels-${hotel.hotelName.toLowerCase()}`}
+                key={`hotels-${hotel.hotelName}`}
                 data-test-id={`hotel-type-${hotel.hotelName.toLowerCase()}`}
               >
                 <Card className="flex flex-col rounded-md bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0 text-left justify-between">
                   <Link
                     className="flex flex-col justify-between overflow-hidden"
-                    href={`/hotels/${hotel.hotelName.toLowerCase()}`}
+                    href={`/hotels/${hotel.hotelName}`}
                   >
                     <img
                       className="rounded-t-md hover:scale-125 transition-all duration-500"
