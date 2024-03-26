@@ -20,6 +20,7 @@
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-slot": "^1.0.2",
     "@upleveled/ley": "^0.8.6",
+    "@uploadthing/react": "^6.4.1",
     "add": "^2.0.6",
     "autoprefixer": "^10.0.1",
     "bcrypt": "^5.1.1",
@@ -46,6 +47,7 @@
     "tailwindcss": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.7.1",
+    "uploadthing": "^6.7.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

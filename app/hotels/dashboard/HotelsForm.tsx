@@ -4,6 +4,7 @@ import { CldUploadButton } from 'next-cloudinary';
 // import dayjs from 'dayjs';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import ImageUpload from '../../../components/ImageUploader';
 import { RegisterResponseBodyPost } from '../../api/hotels/route';
 // import { Animal } from '../../../migrations/00000-createTableAnimals';
 import ErrorMessage from '../../ErrorMessage';
@@ -137,6 +138,8 @@ export default function HotelsForm() {
             />
           </div>
           <CldUploadButton uploadPreset="<Upload Preset>" />
+
+          <ImageUpload />
           <div className="text-center">
             <button
               // type="button"
