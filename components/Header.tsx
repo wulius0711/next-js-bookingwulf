@@ -44,7 +44,7 @@ const callsToAction = [
   { name: 'Support', href: '/', icon: PhoneIcon },
 ];
 
-export default function Header() {
+export default function Header(props: { username?: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -147,13 +147,13 @@ export default function Header() {
             </Transition>
           </Popover>
           <a
-            href="/"
+            href="/specials"
             className="text-base leading-6 text-white hover:text-gray-200"
           >
             Specials
           </a>
           <a
-            href="/"
+            href="/cars"
             className="text-base leading-6 text-white hover:text-gray-200"
           >
             Cars
@@ -164,25 +164,42 @@ export default function Header() {
           >
             Sights
           </a>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="/register"
-              className="text-base leading-6 text-white underline hover:no-underline hover:text-gray-200"
-            >
-              Register
-              {/* <span aria-hidden="true">&rarr;</span> */}
-            </a>
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="/login"
-              className="text-base leading-6 text-white underline hover:no-underline hover:text-gray-200"
-            >
-              Log in
-              {/* <span aria-hidden="true">&rarr;</span> */}
-            </a>
-          </div>
-          <LogoutButton />
+
+          {props.username ? (
+            <>
+              <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a
+                  href={`/profile/${props.username}`}
+                  className="text-base leading-6 text-white underline hover:no-underline hover:text-gray-200"
+                >
+                  Profile
+                  {/* <span aria-hidden="true">&rarr;</span> */}
+                </a>
+              </div>
+              <LogoutButton />
+            </>
+          ) : (
+            <>
+              <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a
+                  href="/register"
+                  className="text-base leading-6 text-white underline hover:no-underline hover:text-gray-200"
+                >
+                  Register
+                  {/* <span aria-hidden="true">&rarr;</span> */}
+                </a>
+              </div>
+              <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a
+                  href="/login"
+                  className="text-base leading-6 text-white underline hover:no-underline hover:text-gray-200"
+                >
+                  Log in
+                  {/* <span aria-hidden="true">&rarr;</span> */}
+                </a>
+              </div>
+            </>
+          )}
         </Popover.Group>
       </nav>
 
@@ -254,19 +271,19 @@ export default function Header() {
 
                 {/* other main-nav-items */}
                 <a
-                  href="/"
+                  href="/specials"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#3669a1]"
                 >
                   Specials
                 </a>
                 <a
-                  href="/"
+                  href="/cars"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#3669a1]"
                 >
                   Cars
                 </a>
                 <a
-                  href="/"
+                  href="/sights"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#3669a1]"
                 >
                   Sights
