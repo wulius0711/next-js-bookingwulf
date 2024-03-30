@@ -54,6 +54,7 @@ export async function POST(
     result.data.address,
     result.data.rating,
     result.data.pricePerNight,
+    result.data.imageUrl,
   );
   console.log('Hotel: ', newHotel);
   if (!newHotel) {

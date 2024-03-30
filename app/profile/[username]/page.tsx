@@ -35,7 +35,7 @@ export default async function UserProfilePage(props: Props) {
           <section className="w-64 bg-[#2D5886] rounded-lg px-8 py-6 shadow-lg">
             <div className="mt-6 w-fit mx-auto">
               <img
-                src="/aff.png"
+                src="/profile-pic-jane.webp"
                 className="rounded-full w-28 "
                 alt="profile"
               />
@@ -52,7 +52,7 @@ export default async function UserProfilePage(props: Props) {
 
         <section className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-left lg:mx-0 mx-auto lg:mt-0 mt-8">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Wulius
+            {props.params.username}
           </h5>
           <div className="font-normal text-gray-700 dark:text-gray-400">
             <p className="mt-4">

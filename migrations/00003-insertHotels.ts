@@ -9,6 +9,8 @@ const hotels = [
     address: 'Monteverde/Costa Rica',
     rating: 4,
     pricePerNight: 120,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550855/wwao4gc22y8yoxhb5cux.webp',
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ const hotels = [
     address: 'London/England',
     rating: 4,
     pricePerNight: 240,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550855/xkr6uuflaqmqbxeaaxvl.webp',
   },
   {
     id: 3,
@@ -27,6 +31,8 @@ const hotels = [
     address: 'Montréal/Canada',
     rating: 3,
     pricePerNight: 160,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550854/t7spplqohjtvvlurhosn.webp',
   },
   {
     id: 4,
@@ -36,6 +42,8 @@ const hotels = [
     address: 'Paris/France',
     rating: 4,
     pricePerNight: 220,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550855/gw6snljefnszpoar1wrz.webp',
   },
   {
     id: 5,
@@ -45,6 +53,8 @@ const hotels = [
     address: 'Nice/France',
     rating: 4,
     pricePerNight: 260,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550855/m7gw66bfmgzytcvoqknh.webp',
   },
   {
     id: 6,
@@ -54,6 +64,8 @@ const hotels = [
     address: 'Berlin/Germany',
     rating: 3,
     pricePerNight: 130,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550854/kp9wsmwhxyouf0moym2r.webp',
   },
   {
     id: 7,
@@ -63,6 +75,8 @@ const hotels = [
     address: 'Athens/Greece',
     rating: 4,
     pricePerNight: 90,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550855/u1cycy3vdjtaaukshyib.webp',
   },
   {
     id: 8,
@@ -72,6 +86,8 @@ const hotels = [
     address: 'Lucerne/Switzerland',
     rating: 5,
     pricePerNight: 280,
+    imageUrl:
+      'https://res.cloudinary.com/dtv9qfcpb/image/upload/v1711550855/qzylrnjjhkshiafv1emq.webp',
   },
 ];
 
@@ -84,7 +100,8 @@ export async function up(sql: Sql) {
           description,
           address,
           rating,
-          price_per_night
+          price_per_night,
+          image_url
         )
       VALUES
         (
@@ -92,7 +109,8 @@ export async function up(sql: Sql) {
           ${hotel.description},
           ${hotel.address},
           ${hotel.rating},
-          ${hotel.pricePerNight}
+          ${hotel.pricePerNight},
+          ${hotel.imageUrl}
         )
     `;
   }

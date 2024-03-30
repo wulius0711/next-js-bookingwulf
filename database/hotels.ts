@@ -8,6 +8,7 @@ export type Hotel = {
   address: string;
   rating: number;
   pricePerNight: string;
+  imageUrl: string;
 };
 
 export const createHotelInsecure = cache(
@@ -17,11 +18,17 @@ export const createHotelInsecure = cache(
     address: string,
     rating: number,
     pricePerNight: string,
+    imageUrl: string,
   ) => {
     const [hotel] = await sql<
       Pick<
         Hotel,
-        'hotelName' | 'description' | 'address' | 'rating' | 'pricePerNight'
+        | 'hotelName'
+        | 'description'
+        | 'address'
+        | 'rating'
+        | 'pricePerNight'
+        | 'imageUrl'
       >[]
     >`
       INSERT INTO
@@ -30,7 +37,8 @@ export const createHotelInsecure = cache(
           description,
           address,
           rating,
-          price_per_night
+          price_per_night,
+          image_url
         )
       VALUES
         (
@@ -38,14 +46,16 @@ export const createHotelInsecure = cache(
           ${description},
           ${address},
           ${rating},
-          ${pricePerNight}
+          ${pricePerNight},
+          ${imageUrl}
         )
       RETURNING
         hotel_name,
         description,
         address,
         rating,
-        price_per_night
+        price_per_night,
+        image_url
     `;
     return hotel;
   },
@@ -86,7 +96,8 @@ export const updateHotelInsecure = cache(async (updatedHotel: Hotel) => {
       description = ${updatedHotel.description},
       address = ${updatedHotel.address},
       rating = ${updatedHotel.rating},
-      price_per_night = ${updatedHotel.pricePerNight}
+      price_per_night = ${updatedHotel.pricePerNight},
+      image_url = ${updatedHotel.imageUrl}
     WHERE
       hotel_name = ${updatedHotel.hotelName}
     RETURNING

@@ -7,7 +7,7 @@ export default function Home() {
       <section
         className="h-screen bg-cover bg-no-repeat bg-blend-darken -mt-[96px] bg-fixed"
         style={{
-          backgroundImage: "url('/images/home-hero-image.jpeg')",
+          backgroundImage: "url('/images/home-hero-image.webp')",
           height: 'cover',
         }}
       >
